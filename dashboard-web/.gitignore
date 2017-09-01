@@ -1,0 +1,5 @@
+.settings/
+bin/
+build/
+node_modules/
+src/**/*.soy.js

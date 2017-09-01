@@ -1,0 +1,47 @@
+{
+	"dependencies": {
+		"metal-component": "^2.13.2",
+		"metal-dom": "^2.13.2",
+		"metal-soy": "^2.13.2",
+		"metal-state": "^2.13.2"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-jest": "^20.0.3",
+		"babel-loader": "^7.0.0",
+		"babel-plugin-module-resolver": "^2.7.1",
+		"babel-plugin-transform-node-env-inline": "^0.1.1",
+		"babel-preset-metal": "^4.1.0",
+		"eslint": "^4.1.1",
+		"eslint-config-liferay": "^1.0.2",
+		"jest": "^20.0.4",
+		"jest-aliasify-resolver": "^1.1.0",
+		"jest-liferay-resolver": "^1.0.0",
+		"liferay-module-config-generator": "^1.2.1",
+		"metal-cli": "4.2.0",
+		"metal-jest-serializer": "^1.0.1",
+		"metal-soy-critic": "^2.1.0",
+		"metal-tools-soy": "^4.2.1",
+		"prettier": "^1.5.2"
+	},
+	"name": "dashboard-web",
+	"jest": {
+		"resolver": "jest-liferay-resolver",
+		"roots": [
+			"src"
+		],
+		"snapshotSerializers": [
+			"metal-jest-serializer"
+		],
+		"testURL": "http://liferay.com",
+		"timers": "fake"
+	},
+	"scripts": {
+		"format": "prettier --use-tabs true --tab-width 4 --single-quote --trailing-comma all --write src/**/*.js",
+		"lint": "eslint src/**/*.js --fix && mcritic src",
+		"soy": "metalsoy",
+		"test": "jest --no-cache"
+	},
+	"version": "1.0.0"
+}

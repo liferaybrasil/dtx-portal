@@ -1,0 +1,81 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css"; 
+
+$light-gray: #F2F2F2;
+$green: #C9D645;
+$red: red;
+$font: 'Palanquin', sans-serif;;
+
+.progress {
+  display: inline-flex;
+  align-items: center;
+  counter-reset: step;
+  padding: 0;
+  height: 300px;
+  background-color: transparent;
+  width: 100%;
+  color: $light-gray;
+  font-family: $font;
+  list-style: none;
+  text-transform: uppercase;
+  
+  .progress-circle {
+    align-items: center;
+    border-radius: 50%;
+    border: 5px solid $light-gray;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 120px;
+    width: 120px;
+ 
+    &:before {
+      color: #fff;
+      content: '\f00c';
+      font-family: 'FontAwesome';
+      font-size: 3em;
+      margin-top: 18px;
+    }
+    
+    span {
+      margin-top: 50px;
+      font-size: 25px;
+
+      &.time {
+        font-size: 18px;
+        margin-top: 0;
+      }
+    }
+
+    &.done {
+      background: $green;
+      border: 5px solid $green;
+      color: $green;
+    }
+
+    &.extra {
+      background: $red;
+      border: 5px solid $red;
+
+      &:before {
+        content: '\f2718';
+      }
+
+      span {
+        color: $red;
+      }
+    }
+  }
+  
+  .progress-bar {
+    flex: 1;
+    height: 12px;
+    background: $light-gray;
+
+    &.done {
+      background: $green;
+    }
+
+    &.extra {
+      background: $red;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{namespace View}
+
+/**
+ * Prints the portlet main view.
+ */
+{template .render}
+	{@param id: string}
+	{@param steps: list<[
+		label: string,
+		check: bool,
+		time: string
+	]>}
+
+	<div class="dashboard-container" id="{$id}">
+		{foreach $step in $steps}
+			{if $step.check and $step.label == 'extraviada'}
+				<div class="alert-danger alert-danger-content yui3-widget alert liferayalert liferayalert-content yui3-widget-stdmod alert-dismissable">
+					<button class="close" type="button">
+						<svg class="lexicon-icon lexicon-icon-times icon-monospaced" focusable="false" role="image" viewBox="0 0 512 512">
+							<path class="lexicon-icon-outline" d="M295.781 256l205.205-205.205c10.998-10.998 10.998-28.814 0-39.781-10.998-10.998-28.815-10.998-39.781 0l-205.205 205.205-205.205-205.238c-10.966-10.998-28.814-10.998-39.781 0-10.998 10.998-10.998 28.814 0 39.781l205.205 205.238-205.205 205.205c-10.998 10.998-10.998 28.815 0 39.781 5.467 5.531 12.671 8.265 19.874 8.265s14.407-2.734 19.907-8.233l205.205-205.238 205.205 205.205c5.5 5.5 12.703 8.233 19.906 8.233s14.407-2.734 19.906-8.233c10.998-10.998 10.998-28.815 0-39.781l-205.238-205.205z"></path>
+						</svg>
+					</button>
+					<div class="yui3-widget-bd">
+						<strong class="lead">
+							<svg class="lexicon-icon" focusable="false" viewBox="0 0 512 512">
+								<path class="lexicon-icon-outline" d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M256,384c-17.7,0-32-14.3-32-32
+					s14.3-32,32-32s32,14.3,32,32S273.7,384,256,384z M272,288h-32l-16-160h64L272,288z"></path>
+							</svg>
+						</strong>Infelizmente identificamos um problema com sua bagagem.
+					</div>
+				</div>
+			{/if}
+		{/foreach}
+		<ul class="progress">
+			{foreach $step in $steps}
+				<li class="progress-circle{if $step.check} done {if $step.label == 'extraviada'} extra{/if}{/if}">
+					<span>
+						{if $step.label == 'extraviada'}
+							?
+						{else}
+							{$step.label}
+						{/if}
+					</span>
+					<span class="time">{$step.time}</span>
+				</li>
+				<li class="progress-bar{if $step.check} done{if $step.label == 'extraviada'} extra{/if}{/if}"></li>
+			{/foreach}
+		</ul>
+	</div>
+{/template}
