@@ -1,0 +1,14 @@
+[
+    {
+    		"description": "Track luggage",
+        "path": "/lugagge/",
+        "data": true,
+        "method": "POST"
+    },
+    {
+        "description": "Returns luggage",
+        "path": "/luggage",
+        "data": true,
+        "method": "GET"
+    }
+]
