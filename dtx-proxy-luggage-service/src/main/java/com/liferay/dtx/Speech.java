@@ -30,7 +30,7 @@ public class Speech {
 		case "porão":
 			this.displayText = "Sua bagagem está no porão do avião";
 			break;
-		case "extraviado":
+		case "extraviada":
 			this.displayText = "Infelizmente identificamos um problema com sua bagagem";
 			break;
 
