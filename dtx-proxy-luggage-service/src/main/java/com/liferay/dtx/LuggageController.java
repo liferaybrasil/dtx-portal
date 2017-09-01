@@ -31,7 +31,7 @@ public class LuggageController {
 	public Speech update(@PathVariable(value = "luggageId") long luggageId) {
 		Luggage luggage = getLuggage(luggageId);
 
-		return new Speech(luggage.getStatus(), luggage.getStatus());
+		return new Speech(luggage.getStatus());
 	}
 
 	private Luggage getLuggage(long luggageId) {

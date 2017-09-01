@@ -2,12 +2,40 @@ package com.liferay.dtx;
 
 public class Speech {
 
-	public String speech;
-	public String displayText;
+	private String speech;
+	private String displayText;
 
-	public Speech(String speech, String displayText) {
+	public Speech(String speech) {
 		super();
-		this.speech = speech;
-		this.displayText = displayText;
+		setDisplayText(speech);
+		this.speech = displayText;
+	}
+
+	public String getSpeech() {
+		return speech;
+	}
+
+	public String getDisplayText() {
+		return displayText;
+	}
+
+	private void setDisplayText(String speech) {
+		switch (speech) {
+		case "balcão":
+			this.displayText = "Fique tranquilo! Sua bagagem ainda está no balcão de despacho";
+			break;
+		case "esteira":
+			this.displayText = "Sua bagagem está na esteira";
+			break;
+		case "porão":
+			this.displayText = "Sua bagagem está no porão do avião";
+			break;
+		case "extraviado":
+			this.displayText = "Infelizmente identificamos um problema com sua bagagem";
+			break;
+
+		default:
+			break;
+		}
 	}
 }
