@@ -1,7 +1,7 @@
 [
     {
     		"description": "Track luggage",
-        "path": "/luggage/",
+        "path": "/luggage",
         "data": true,
         "method": "POST"
     },
@@ -12,14 +12,14 @@
         "method": "GET"
     },
     {
-    		"description": "Edit Ibeacon",
-        "path": "/ibeacon/:id",
+    		"description": "Save Ibeacon",
+        "path": "/ibeacon",
         "data": true,
-        "method": "PUT"
+        "method": "POST"
     },
     {
         "description": "Returns Ibeacon",
-        "path": "/ibeacon/:id",
+        "path": "/ibeacon",
         "data": true,
         "method": "GET"
     }
