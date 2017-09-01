@@ -1,15 +1,8 @@
 [
     {
-    		"description": "Track luggage",
+        "description": "Manage luggage",
         "path": "/luggage",
-        "data": true,
-        "method": "POST"
-    },
-    {
-        "description": "Returns luggage",
-        "path": "/luggage",
-        "data": true,
-        "method": "GET"
+        "data": true
     },
     {
     		"description": "Save Ibeacon",
