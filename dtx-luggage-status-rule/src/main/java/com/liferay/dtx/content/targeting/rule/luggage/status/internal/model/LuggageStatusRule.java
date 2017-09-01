@@ -60,12 +60,14 @@ public class LuggageStatusRule extends BaseJSPRule {
 				JsonNode json = response.getBody();
 				System.out.println("Response from external call: " + json);
 				JSONArray array = json.getArray();
-				JSONObject object = array.getJSONObject(0);
-				String status = object.getString("status");
-		
-				if (ruleInstance.getTypeSettings().equalsIgnoreCase(status)) {
-					System.out.println("Found rule: " + status);
-					return true;
+				if (array.length() > 0) {
+					JSONObject object = array.getJSONObject(0);
+					String status = object.getString("status");
+			
+					if (ruleInstance.getTypeSettings().equalsIgnoreCase(status)) {
+						System.out.println("Found rule: " + status);
+						return true;
+					}
 				}
 			}
 		} catch (Exception e) {
