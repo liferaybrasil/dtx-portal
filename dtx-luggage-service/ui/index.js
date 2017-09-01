@@ -5,7 +5,7 @@ form.addEventListener('submit', function(e) {
 
 	WeDeploy
 		.data('db-dtx.wedeploy.io')
-		.create('lugagge', {
+		.create('luggage', {
 			luggageId : 1,
 			location: 'Balcão'
 		})
